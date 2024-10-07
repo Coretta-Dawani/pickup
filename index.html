@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-Parent Registration</title>
+</head>
+<body>
+    <h2>Parent Registration</h2>
+    <form action="http://localhost/pick_up/register.php" method="POST">
+        <fieldset>
+            <legend>Parent Information:</legend>
+            <label for="parent_name">Parent Name:</label>
+            <input type="text" id="parent_name" name="parent_name" required><br><br>
+
+            <label for="phone_number">Phone Number:</label>
+            <input type="tel" id="phone_number" name="phone_number" required><br><br>
+        </fieldset>
+
+        <h2>Student Registration</h2>
+        <fieldset>
+            <legend>Student Information:</legend>
+            <label for="student_id">Student ID:</label>
+            <input type="text" id="student_id" name="student_id" required><br><br>
+
+            <label for="student_name">Student Name:</label>
+            <input type="text" id="student_name" name="student_name" required><br><br>
+
+            <label for="grade">Grade:</label>
+            <input type="text" id="grade" name="grade" required><br><br>
+
+            <label for="existing_parent">Are you linking to an existing parent?</label>
+            <input type="checkbox" id="existing_parent" name="existing_parent"><br><br>
+
+            <div id="parent_id_div" style="display:none;">
+                <label for="parent_id">Enter Parent ID:</label>
+                <input type="text" id="parent_id" name="parent_id"><br><br>
+            </div>
+        </fieldset>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        // Show/hide parent ID input based on existing parent checkbox
+        const existingParentCheckbox = document.getElementById('existing_parent');
+        const parentIdDiv = document.getElementById('parent_id_div');
+
+        existingParentCheckbox.addEventListener('change', function() {
+            if (existingParentCheckbox.checked) {
+                parentIdDiv.style.display = 'block';
+            } else {
+                parentIdDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
