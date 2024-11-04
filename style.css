@@ -1,0 +1,88 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h2 {
+    color: #4a4a4a;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #4a90e2;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="tel"] {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #357ab8;
+}
+
+.message {
+    margin: 20px 0;
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+}
+
+.school-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.school-header img {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: auto;
+}
+
+.school-header h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}

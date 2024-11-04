@@ -4,41 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student-Parent Registration</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- School Name and Logo -->
+    <div class="school-header">
+        <img src="sch.png" alt="School Logo">
+        <h1>Academic School</h1>
+    </div>
+
     <h2>Parent Registration</h2>
     <form action="http://localhost/pick_up/register.php" method="POST">
         <fieldset>
             <legend>Parent Information:</legend>
             <label for="parent_name">Parent Name:</label>
-            <input type="text" id="parent_name" name="parent_name" required><br><br>
+            <input type="text" id="parent_name" name="parent_name" required>
 
             <label for="phone_number">Phone Number:</label>
-            <input type="tel" id="phone_number" name="phone_number" required><br><br>
+            <input type="tel" id="phone_number" name="phone_number" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+            <small>Format: 123-456-7890</small>
         </fieldset>
 
         <h2>Student Registration</h2>
         <fieldset>
             <legend>Student Information:</legend>
             <label for="student_id">Student ID:</label>
-            <input type="text" id="student_id" name="student_id" required><br><br>
+            <input type="text" id="student_id" name="student_id" required>
 
             <label for="student_name">Student Name:</label>
-            <input type="text" id="student_name" name="student_name" required><br><br>
+            <input type="text" id="student_name" name="student_name" required>
 
             <label for="grade">Grade:</label>
-            <input type="text" id="grade" name="grade" required><br><br>
+            <input type="text" id="grade" name="grade" required>
 
             <label for="existing_parent">Are you linking to an existing parent?</label>
-            <input type="checkbox" id="existing_parent" name="existing_parent"><br><br>
+            <input type="checkbox" id="existing_parent" name="existing_parent">
 
             <div id="parent_id_div" style="display:none;">
                 <label for="parent_id">Enter Parent ID:</label>
-                <input type="text" id="parent_id" name="parent_id"><br><br>
+                <input type="text" id="parent_id" name="parent_id">
             </div>
         </fieldset>
 
         <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+    </form>
+
+    <h2>Delete Student</h2>
+    <form action="http://localhost/pick_up/delete_student.php" method="POST">
+        <fieldset>
+            <legend>Delete Student Information:</legend>
+            <label for="delete_student_id">Student ID to Delete:</label>
+            <input type="text" id="delete_student_id" name="delete_student_id" required>
+        </fieldset>
+        <input type="submit" value="Delete Student">
+        <input type="reset" value="Reset">
     </form>
 
     <script>
@@ -47,11 +67,7 @@
         const parentIdDiv = document.getElementById('parent_id_div');
 
         existingParentCheckbox.addEventListener('change', function() {
-            if (existingParentCheckbox.checked) {
-                parentIdDiv.style.display = 'block';
-            } else {
-                parentIdDiv.style.display = 'none';
-            }
+            parentIdDiv.style.display = existingParentCheckbox.checked ? 'block' : 'none';
         });
     </script>
 </body>
