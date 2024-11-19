@@ -151,7 +151,7 @@ class MainWindow(QMainWindow):
         self.image_button = QPushButton("Scan from Image", self)
         self.image_button.clicked.connect(self.scan_from_image)
 
-        self.webcam_button = QPushButton("Scan from Webcam", self)
+        self.webcam_button = QPushButton("Scan from DroidCam", self)
         self.webcam_button.clicked.connect(self.scan_from_webcam)
 
         # Label to display the webcam feed
@@ -196,10 +196,10 @@ class MainWindow(QMainWindow):
             self.result_window.show()  # Display the result window
 
     def scan_from_webcam(self):
-        # Open the webcam
-        self.cap = cv2.VideoCapture(0)
+        # Attempt to open DroidCam feed via IP URL
+        self.cap = cv2.VideoCapture("http://192.168.1.117:4747/video") 
         if not self.cap.isOpened():
-            self.result_window.update_results(["Error: Could not open webcam"])
+            self.result_window.update_results(["Error: Could not open DroidCam feed"])
             self.result_window.show()
             return
         self.timer.start(20)  # Update every 20ms (~50 frames per second)
