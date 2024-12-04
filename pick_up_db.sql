@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2024 at 09:14 AM
+-- Generation Time: Dec 04, 2024 at 07:56 AM
 -- Server version: 11.5.2-MariaDB
 -- PHP Version: 7.4.24
 
@@ -43,7 +43,8 @@ INSERT INTO `parents` (`parent_id`, `parent_name`, `phone_number`, `qr_code`) VA
 (3, 'Maren Mill', '123-456-7891', 'qr_codes/Maren_Mill_Maria_Mill.png'),
 (4, 'Leilani Barajas', '123-456-7892', 'qr_codes/Leilani_Barajas_Davis_Barajas.png'),
 (5, 'Maverick Wiley', '123-456-7893', 'qr_codes/Maverick_Wiley_Jay_Wiley.png'),
-(6, 'Maria Fletcher', '123-456-7895', 'qr_codes/Maria_Fletcher_Oakley_Fletcher.png');
+(6, 'Maria Fletcher', '123-456-7895', 'qr_codes/Maria_Fletcher_Oakley_Fletcher.png'),
+(11, 'Chisomo Langinzo', '123-456-8760', 'qr_codes/Chisomo_Langinzo_Mphatso_Langizo.png');
 
 -- --------------------------------------------------------
 
@@ -69,7 +70,8 @@ INSERT INTO `parent_student` (`parent_student_id`, `parent_id`, `student_id`, `n
 (5, 4, '20240401', 'Leilani Barajas - Davis Barajas'),
 (6, 5, '20240302', 'Maverick Wiley - Jay Wiley'),
 (7, 6, '20240301', 'Maria Fletcher - Oakley Fletcher'),
-(8, 6, '20240303', 'Maria Fletcher  - Finley Fletcher');
+(8, 6, '20240303', 'Maria Fletcher  - Finley Fletcher'),
+(9, 11, '20240405', 'Chisomo Langinzo - Mphatso Langizo');
 
 --
 -- Triggers `parent_student`
@@ -112,7 +114,8 @@ INSERT INTO `students` (`student_id`, `student_name`, `grade`) VALUES
 ('20240301', 'Oakley Fletcher', '3'),
 ('20240302', 'Jay Wiley', '3'),
 ('20240303', 'Finley Fletcher', '3'),
-('20240401', 'Davis Barajas', '4');
+('20240401', 'Davis Barajas', '4'),
+('20240405', 'Mphatso Langizo', '4');
 
 --
 -- Indexes for dumped tables
@@ -147,13 +150,13 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `parents`
 --
 ALTER TABLE `parents`
-  MODIFY `parent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `parent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `parent_student`
 --
 ALTER TABLE `parent_student`
-  MODIFY `parent_student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `parent_student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
